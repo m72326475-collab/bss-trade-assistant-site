@@ -19,13 +19,13 @@ The editable site values are together at the top of `script.js`:
 ```js
 const SITE_CONFIG = {
   DOWNLOAD_URL: "",
-  ROBLOX_PROFILE_URL: "",
+  ROBLOX_PROFILE_URL: "https://www.roblox.com/users/profile?username=bssbat",
   LATEST_VERSION: "Coming soon",
 };
 ```
 
 - Set `DOWNLOAD_URL` to the public `.exe` or GitHub Release URL when it is ready. Until then, the download button stays disabled and says **Coming soon**.
-- Set `ROBLOX_PROFILE_URL` to the full Roblox profile URL. Until then, its button stays disabled.
+- Set `ROBLOX_PROFILE_URL` to the full Roblox profile URL shown by the active community button.
 - Update `LATEST_VERSION` when publishing releases (reserved for future release messaging).
 
 ## Deploy with GitHub Pages
