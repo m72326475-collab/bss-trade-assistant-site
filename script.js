@@ -1,7 +1,7 @@
 // Site configuration — update these values when links are ready.
 const SITE_CONFIG = {
   DOWNLOAD_URL: "",
-  ROBLOX_PROFILE_URL: "",
+  ROBLOX_PROFILE_URL: "https://www.roblox.com/users/profile?username=bssbat",
   LATEST_VERSION: "Coming soon",
 };
 
@@ -18,12 +18,12 @@ function configureAction(selector, url, readyLabel) {
   link.removeAttribute("disabled");
   link.querySelector("small")?.remove();
   const label = link.querySelector("span");
-  if (label && readyLabel) label.firstChild.textContent = readyLabel;
+  if (label && readyLabel) label.textContent = readyLabel;
   current.replaceWith(link);
 }
 
 configureAction(".download-button", SITE_CONFIG.DOWNLOAD_URL, "Download for Windows");
-configureAction(".roblox-button", SITE_CONFIG.ROBLOX_PROFILE_URL, "Follow me on Roblox");
+configureAction(".roblox-button", SITE_CONFIG.ROBLOX_PROFILE_URL, "Follow @bssbat on Roblox ↗");
 
 const menuButton = document.querySelector(".menu-button");
 const navLinks = document.querySelector(".nav-links");
