@@ -25,6 +25,11 @@ function configureAction(selector, url, readyLabel) {
 configureAction(".download-button", SITE_CONFIG.DOWNLOAD_URL, "Download for Windows");
 configureAction(".roblox-button", SITE_CONFIG.ROBLOX_PROFILE_URL, "Follow @bssbat on Roblox ↗");
 
+// Keep the styled icon fallback visible if a remote sticker image cannot load.
+document.querySelectorAll(".sticker img").forEach((image) => {
+  image.addEventListener("error", () => image.remove());
+});
+
 const menuButton = document.querySelector(".menu-button");
 const navLinks = document.querySelector(".nav-links");
 menuButton?.addEventListener("click", () => {
