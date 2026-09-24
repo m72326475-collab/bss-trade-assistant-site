@@ -25,9 +25,11 @@ function configureAction(selector, url, readyLabel) {
 configureAction(".download-button", SITE_CONFIG.DOWNLOAD_URL, "Download for Windows");
 configureAction(".roblox-button", SITE_CONFIG.ROBLOX_PROFILE_URL, "Follow @bssbat on Roblox ↗");
 
-// Keep the styled icon fallback visible if a remote sticker image cannot load.
+// Show the styled icon fallback only if a remote sticker image cannot load.
 document.querySelectorAll(".sticker img").forEach((image) => {
-  image.addEventListener("error", () => image.remove());
+  const showFallback = () => image.parentElement.classList.add("image-error");
+  image.addEventListener("error", showFallback);
+  if (image.complete && image.naturalWidth === 0) showFallback();
 });
 
 const menuButton = document.querySelector(".menu-button");
